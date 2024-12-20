@@ -5,7 +5,7 @@
 //  Created by Adolpho Francisco Zimmermann Piazza on 19/12/24.
 //
 
-import Foundation
+import SwiftUI
 
 @Observable
 final class HomeViewModel {
@@ -14,6 +14,7 @@ final class HomeViewModel {
         case idle
         case hasData
         case noData
+        case search
         case error
     }
     
@@ -21,8 +22,8 @@ final class HomeViewModel {
     
     private(set) var currentWeatherData: CurrentWeatherModel?
     private(set) var isLoading: Bool = false
-    private(set) var state: State = .idle
     
+    var state: State = .idle
     let userDefaultKey: String = "currentWeatherCity"
     
     var cityName: String {
@@ -65,7 +66,7 @@ final class HomeViewModel {
         }
     }
     
-    func fetchCurrentWeather(city: String) async {
+    func fetchCurrentWeather(city: String, isSearching: Bool = false) async {
         defer {
             self.isLoading = false
         }
@@ -75,6 +76,14 @@ final class HomeViewModel {
         do {
             self.isLoading = true
             self.currentWeatherData = try await weatherService?.fetchCurrentWeather()
+            
+            if isSearching {
+                withAnimation {
+                    self.state = .search
+                }
+                return
+            }
+            
             self.saveOnUserDefaults(city: city)
             self.state = .hasData
         } catch {
@@ -83,7 +92,7 @@ final class HomeViewModel {
         }
     }
     
-    private func saveOnUserDefaults(city: String) {
+    func saveOnUserDefaults(city: String) {
         UserDefaults.standard.set(city, forKey: self.userDefaultKey)
     }
     

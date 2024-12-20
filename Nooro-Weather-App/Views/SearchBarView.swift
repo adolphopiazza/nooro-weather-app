@@ -37,6 +37,7 @@ struct SearchBarView: View {
             .submitLabel(.search)
             .onSubmit {
                 onSubmitAction(queryText)
+                queryText = ""
             }
     }
     
