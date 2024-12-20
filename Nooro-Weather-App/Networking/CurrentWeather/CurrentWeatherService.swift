@@ -27,6 +27,7 @@ final class CurrentWeatherService: CurrentWeatherProtocol {
         var url = URL.baseURL.appending(path: self.endpoint)
         url = url.appending(queryItems: [.init(name: .Parameters.apiKey, value: .apiKey),
                                          .init(name: .Parameters.q, value: self.querySearch)])
+        url.removeAllCachedResourceValues()
         
         service = .init(url: url)
         

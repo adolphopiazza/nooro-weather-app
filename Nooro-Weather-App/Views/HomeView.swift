@@ -15,7 +15,7 @@ struct HomeView: View {
         ZStack {
             SearchBarView { query in
                 Task {
-                    await viewModel.fetchCurrentWeather(city: query)
+                    await viewModel.fetchCurrentWeather(city: query, isSearching: true)
                 }
             }
             .padding(.top, 44)
@@ -32,8 +32,21 @@ struct HomeView: View {
                         .padding(.top, 36)
                 case .noData:
                     noDataView
+                case .search:
+                    searchView
+                        .frame(maxHeight: .infinity, alignment: .top)
+                        .padding(.top, 122)
+                        .onTapGesture {
+                            withAnimation {
+                                viewModel.state = .hasData
+                                viewModel.saveOnUserDefaults(city: viewModel.cityName)
+                            }
+                        }
                 case .error:
-                    EmptyView() // to-do
+                    Text("We got an error 😞\nPlease try a new search")
+                        .foregroundStyle(.black2C2C2C)
+                        .font(.poppins(weight: .medium, size: 20))
+                        .multilineTextAlignment(.center)
                 }
             }
             .opacity(viewModel.isLoading ? 0 : 1)
@@ -98,6 +111,47 @@ struct HomeView: View {
                 .font(.poppins(weight: .semiBold, size: 15))
                 .padding(.top, 10)
         }
+    }
+    
+    private var searchView: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 0) {
+                Text(viewModel.cityName)
+                    .font(.poppins(weight: .semiBold, size: 20))
+                
+                HStack(alignment: .top, spacing: 2) {
+                    Text(viewModel.temperature)
+                        .font(.poppins(weight: .medium, size: 60))
+                    
+                    Text("°")
+                        .font(.system(size: 24))
+                        .offset(y: 10)
+                }
+            }
+            .foregroundStyle(.black2C2C2C)
+            
+            Spacer()
+            
+            AsyncImage(url: URL(string: viewModel.weatherIcon)) { phase in
+                if let image = phase.image {
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                } else if phase.error != nil {
+                    Image(systemName: "x.square")
+                        .resizable()
+                } else {
+                    ProgressView()
+                }
+            }
+            .frame(width: 83, height: 67)
+        }
+        .padding(.vertical, 16)
+        .padding(.horizontal, 31)
+        .background(
+            RoundedRectangle(cornerRadius: 16)
+                .fill(.grayF2F2F2)
+        )
     }
     
 }
