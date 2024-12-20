@@ -22,10 +22,19 @@ struct HomeView: View {
             .frame(maxHeight: .infinity, alignment: .top)
             
             VStack(spacing: 0) {
-                currentWeatherView
-                
-                WeatherInformationCardView(viewModel: .init(weatherData: viewModel.informationWeather))
-                    .padding(.top, 36)
+                switch viewModel.state {
+                case .idle:
+                    EmptyView() // Should not enter here
+                case .hasData:
+                    currentWeatherView
+                    
+                    WeatherInformationCardView(viewModel: .init(weatherData: viewModel.informationWeather))
+                        .padding(.top, 36)
+                case .noData:
+                    noDataView
+                case .error:
+                    EmptyView() // to-do
+                }
             }
             .opacity(viewModel.isLoading ? 0 : 1)
             .overlay {
@@ -46,9 +55,11 @@ struct HomeView: View {
                     image
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                } else {
+                } else if phase.error != nil {
                     Image(systemName: "x.square")
                         .resizable()
+                } else {
+                    ProgressView()
                 }
             }
             .frame(width: 123, height: 113)
@@ -73,6 +84,19 @@ struct HomeView: View {
             }
             .foregroundStyle(.black2C2C2C)
             .padding(.top, 24)
+        }
+    }
+    
+    private var noDataView: some View {
+        Group {
+            Text("No City Selected")
+                .foregroundStyle(.black2C2C2C)
+                .font(.poppins(weight: .semiBold, size: 30))
+            
+            Text("Please Search For A City")
+                .foregroundStyle(.black2C2C2C)
+                .font(.poppins(weight: .semiBold, size: 15))
+                .padding(.top, 10)
         }
     }
     
