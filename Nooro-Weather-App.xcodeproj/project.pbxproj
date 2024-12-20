@@ -6,20 +6,56 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXContainerItemProxy section */
+		382161022D14C5BD00B3CCC3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 382160BC2D1367FD00B3CCC3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 382160C32D1367FD00B3CCC3;
+			remoteInfo = "Nooro-Weather-App";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		382160C42D1367FD00B3CCC3 /* Nooro-Weather-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Nooro-Weather-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		382160FE2D14C5BD00B3CCC3 /* Nooro-Weather-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nooro-Weather-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		388488492D14E11200BC2DA9 /* Exceptions for "Nooro-Weather-App" folder in "Nooro-Weather-App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 382160C32D1367FD00B3CCC3 /* Nooro-Weather-App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		382160C62D1367FD00B3CCC3 /* Nooro-Weather-App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				388488492D14E11200BC2DA9 /* Exceptions for "Nooro-Weather-App" folder in "Nooro-Weather-App" target */,
+			);
 			path = "Nooro-Weather-App";
+			sourceTree = "<group>";
+		};
+		382160FF2D14C5BD00B3CCC3 /* Nooro-Weather-AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Nooro-Weather-AppTests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		382160C12D1367FD00B3CCC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		382160FB2D14C5BD00B3CCC3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				382160C62D1367FD00B3CCC3 /* Nooro-Weather-App */,
+				382160FF2D14C5BD00B3CCC3 /* Nooro-Weather-AppTests */,
 				382160C52D1367FD00B3CCC3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				382160C42D1367FD00B3CCC3 /* Nooro-Weather-App.app */,
+				382160FE2D14C5BD00B3CCC3 /* Nooro-Weather-AppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -70,6 +108,29 @@
 			productReference = 382160C42D1367FD00B3CCC3 /* Nooro-Weather-App.app */;
 			productType = "com.apple.product-type.application";
 		};
+		382160FD2D14C5BD00B3CCC3 /* Nooro-Weather-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 382161042D14C5BD00B3CCC3 /* Build configuration list for PBXNativeTarget "Nooro-Weather-AppTests" */;
+			buildPhases = (
+				382160FA2D14C5BD00B3CCC3 /* Sources */,
+				382160FB2D14C5BD00B3CCC3 /* Frameworks */,
+				382160FC2D14C5BD00B3CCC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				382161032D14C5BD00B3CCC3 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				382160FF2D14C5BD00B3CCC3 /* Nooro-Weather-AppTests */,
+			);
+			name = "Nooro-Weather-AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Nooro-Weather-AppTests";
+			productReference = 382160FE2D14C5BD00B3CCC3 /* Nooro-Weather-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -82,6 +143,10 @@
 				TargetAttributes = {
 					382160C32D1367FD00B3CCC3 = {
 						CreatedOnToolsVersion = 16.1;
+					};
+					382160FD2D14C5BD00B3CCC3 = {
+						CreatedOnToolsVersion = 16.1;
+						TestTargetID = 382160C32D1367FD00B3CCC3;
 					};
 				};
 			};
@@ -100,12 +165,20 @@
 			projectRoot = "";
 			targets = (
 				382160C32D1367FD00B3CCC3 /* Nooro-Weather-App */,
+				382160FD2D14C5BD00B3CCC3 /* Nooro-Weather-AppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		382160C22D1367FD00B3CCC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		382160FC2D14C5BD00B3CCC3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +195,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		382160FA2D14C5BD00B3CCC3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		382161032D14C5BD00B3CCC3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 382160C32D1367FD00B3CCC3 /* Nooro-Weather-App */;
+			targetProxy = 382161022D14C5BD00B3CCC3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		382160D02D1367FE00B3CCC3 /* Debug */ = {
@@ -255,6 +343,7 @@
 				DEVELOPMENT_TEAM = H574TJ3JKS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nooro-Weather-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -284,6 +373,7 @@
 				DEVELOPMENT_TEAM = H574TJ3JKS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nooro-Weather-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +389,42 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		382161052D14C5BD00B3CCC3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H574TJ3JKS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adolphopiazza.Nooro-Weather-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nooro-Weather-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Nooro-Weather-App";
+			};
+			name = Debug;
+		};
+		382161062D14C5BD00B3CCC3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = H574TJ3JKS;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.adolphopiazza.Nooro-Weather-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Nooro-Weather-App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Nooro-Weather-App";
 			};
 			name = Release;
 		};
@@ -319,6 +445,15 @@
 			buildConfigurations = (
 				382160D32D1367FE00B3CCC3 /* Debug */,
 				382160D42D1367FE00B3CCC3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		382161042D14C5BD00B3CCC3 /* Build configuration list for PBXNativeTarget "Nooro-Weather-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				382161052D14C5BD00B3CCC3 /* Debug */,
+				382161062D14C5BD00B3CCC3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
