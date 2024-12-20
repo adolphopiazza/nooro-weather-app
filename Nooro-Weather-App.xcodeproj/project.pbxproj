@@ -21,9 +21,22 @@
 		382160FE2D14C5BD00B3CCC3 /* Nooro-Weather-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Nooro-Weather-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		388488492D14E11200BC2DA9 /* Exceptions for "Nooro-Weather-App" folder in "Nooro-Weather-App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 382160C32D1367FD00B3CCC3 /* Nooro-Weather-App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		382160C62D1367FD00B3CCC3 /* Nooro-Weather-App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				388488492D14E11200BC2DA9 /* Exceptions for "Nooro-Weather-App" folder in "Nooro-Weather-App" target */,
+			);
 			path = "Nooro-Weather-App";
 			sourceTree = "<group>";
 		};
@@ -330,6 +343,7 @@
 				DEVELOPMENT_TEAM = H574TJ3JKS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nooro-Weather-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -359,6 +373,7 @@
 				DEVELOPMENT_TEAM = H574TJ3JKS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Nooro-Weather-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
