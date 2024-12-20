@@ -10,10 +10,20 @@ import Foundation
 @Observable
 final class HomeViewModel {
     
+    enum State {
+        case idle
+        case hasData
+        case noData
+        case error
+    }
+    
     private var weatherService: CurrentWeatherService?
     
     private(set) var currentWeatherData: CurrentWeatherModel?
     private(set) var isLoading: Bool = false
+    private(set) var state: State = .idle
+    
+    let userDefaultKey: String = "currentWeatherCity"
     
     var cityName: String {
         guard let city = currentWeatherData?.location?.name else {
@@ -45,7 +55,14 @@ final class HomeViewModel {
     
     init(weatherData: CurrentWeatherModel? = nil) {
         self.currentWeatherData = weatherData
-        // Check in userDefaults for saved queries - do later
+        
+        if let city = self.retrieveFromUserDefaults() {
+            Task {
+                await fetchCurrentWeather(city: city)
+            }
+        } else {
+            self.state = .noData
+        }
     }
     
     func fetchCurrentWeather(city: String) async {
@@ -58,9 +75,20 @@ final class HomeViewModel {
         do {
             self.isLoading = true
             self.currentWeatherData = try await weatherService?.fetchCurrentWeather()
+            self.saveOnUserDefaults(city: city)
+            self.state = .hasData
         } catch {
             print("Error on fetching current weather: \(error)")
+            self.state = .error
         }
+    }
+    
+    private func saveOnUserDefaults(city: String) {
+        UserDefaults.standard.set(city, forKey: self.userDefaultKey)
+    }
+    
+    private func retrieveFromUserDefaults() -> String? {
+        UserDefaults.standard.string(forKey: self.userDefaultKey)
     }
     
 }
