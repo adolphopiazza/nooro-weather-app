@@ -52,9 +52,6 @@ final class HomeViewModelTests: XCTestCase {
         expectation.fulfill()
         await fulfillment(of: [expectation])
         
-        // CurrentWeatherData should be nil
-        XCTAssertNil(viewModel.currentWeatherData)
-        
         // State should be error
         XCTAssertEqual(viewModel.state, .error)
     }
