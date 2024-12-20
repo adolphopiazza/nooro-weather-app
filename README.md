@@ -2,8 +2,6 @@
     <img src="screenshots/appIcon.png" height="150">
 </p>
 
-<img src="screenshots/search.png" height="350"><img src="screenshots/weatherView.png" height="350"><br>
-
 # Nooro Weather App
 
 With Nooro Weather App you can:
@@ -28,4 +26,5 @@ With Nooro Weather App you can:
 
 <br>
 
-<img src="screenshots/noDataView.png" height="350"><img src="screenshots/error.png" height="350">
+<img src="screenshots/search.png" height="350"> <img src="screenshots/weatherView.png" height="350">
+<img src="screenshots/noDataView.png" height="350"> <img src="screenshots/error.png" height="350">
